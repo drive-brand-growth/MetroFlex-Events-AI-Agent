@@ -57,10 +57,18 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 CORS(app)
 
-# Initialize AI agent
-print("Initializing MetroFlex AI Agent...")
-agent = MetroFlexAIAgent()
-print("Agent ready!")
+# Initialize AI agent (will be lazy-loaded on first request)
+print("MetroFlex AI Agent configured...")
+agent = None
+
+def get_agent():
+    """Lazy initialization of agent"""
+    global agent
+    if agent is None:
+        print("Initializing MetroFlex AI Agent...")
+        agent = MetroFlexAIAgent()
+        print("Agent ready!")
+    return agent
 
 @app.route('/', methods=['GET'])
 def home():
@@ -128,11 +136,12 @@ def webhook():
         logger.info(f"Received message: {user_message}")
 
         # Get AI response
-        ai_response = agent.chat(user_message)
+        ai_agent = get_agent()
+        ai_response = ai_agent.chat(user_message)
         logger.info(f"AI response: {ai_response}")
 
         return jsonify({
-            'response': ai_response,
+            'response': ai_response.get('response', str(ai_response)),
             'status': 'success'
         })
 

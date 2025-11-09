@@ -15,13 +15,13 @@ import json
 import os
 from datetime import datetime
 from typing import List, Dict, Optional
-import openai
+from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 import chromadb
 from chromadb.utils import embedding_functions
 
 class MetroFlexAIAgent:
-    def __init__(self, knowledge_base_path: str, openai_api_key: str):
+    def __init__(self, knowledge_base_path: str = None, openai_api_key: str = None):
         """
         Initialize MetroFlex AI Agent with RAG capabilities
 
@@ -29,11 +29,17 @@ class MetroFlexAIAgent:
             knowledge_base_path: Path to METROFLEX_KNOWLEDGE_BASE.json
             openai_api_key: OpenAI API key for GPT-4
         """
+        # Set defaults
+        if knowledge_base_path is None:
+            knowledge_base_path = os.path.join(os.path.dirname(__file__), "METROFLEX_EVENTS_KB_V2_RESEARCH_BASED.json")
+        if openai_api_key is None:
+            openai_api_key = os.getenv("OPENAI_API_KEY")
+
         self.knowledge_base_path = knowledge_base_path
         self.knowledge_base = self._load_knowledge_base()
 
-        # Initialize OpenAI
-        openai.api_key = openai_api_key
+        # Initialize OpenAI (new v1.0+ API)
+        self.client = OpenAI(api_key=openai_api_key)
         self.model = "gpt-4o-mini"  # Cost-optimized: 16x cheaper than GPT-4o (~$0.0005/chat) - Perfect for factual Q&A
 
         # Initialize vector database
@@ -288,15 +294,15 @@ Remember: You represent 38+ years of champion-making excellence. Be confident, h
         messages.append({"role": "user", "content": user_message})
 
         try:
-            # Call OpenAI GPT-4o-mini (cost-optimized)
-            response = openai.ChatCompletion.create(
+            # Call OpenAI GPT-4o-mini (cost-optimized) - new v1.0+ API
+            response = self.client.chat.completions.create(
                 model=self.model,
                 messages=messages,
                 temperature=0.7,
                 max_tokens=300  # Optimized for concise responses (cost savings)
             )
 
-            assistant_message = response.choices[0].message['content']
+            assistant_message = response.choices[0].message.content
 
             # Update conversation history
             self.conversation_history[conv_key].append({"role": "user", "content": user_message})
@@ -336,16 +342,50 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# Initialize agent (set your OpenAI API key via environment variable)
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "your-openai-api-key-here")
-KNOWLEDGE_BASE_PATH = "METROFLEX_EVENTS_KB_V2_RESEARCH_BASED.json"  # Research-based knowledge base
+# Initialize agent (will use environment variable OPENAI_API_KEY)
+agent = None
 
-agent = MetroFlexAIAgent(KNOWLEDGE_BASE_PATH, OPENAI_API_KEY)
+def get_agent():
+    """Lazy initialization of agent"""
+    global agent
+    if agent is None:
+        agent = MetroFlexAIAgent()
+    return agent
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    """
+    Main webhook endpoint for chat messages (simplified for frontend)
+
+    Expected payload:
+    {
+        "message": "User's question"
+    }
+    """
+    try:
+        data = request.json
+        user_message = data.get('message', '')
+
+        if not user_message:
+            return jsonify({"error": "No message provided"}), 400
+
+        # Process message with AI agent
+        ai_agent = get_agent()
+        response = ai_agent.chat(user_message)
+
+        return jsonify({
+            "success": True,
+            "response": response['response'],
+            "timestamp": response['timestamp']
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/webhook/chat', methods=['POST'])
 def ghl_webhook():
     """
-    GHL webhook endpoint for chat messages
+    GHL webhook endpoint for chat messages (full featured)
 
     Expected payload:
     {
@@ -365,7 +405,8 @@ def ghl_webhook():
             return jsonify({"error": "No message provided"}), 400
 
         # Process message with AI agent
-        response = agent.chat(user_message, user_id, conversation_id)
+        ai_agent = get_agent()
+        response = ai_agent.chat(user_message, user_id, conversation_id)
 
         return jsonify({
             "success": True,
