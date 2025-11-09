@@ -5,14 +5,14 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copy requirements first (better caching)
-COPY AI_Agent/requirements-production.txt .
+COPY ./AI_Agent/requirements-production.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements-production.txt
 
 # Copy application files from AI_Agent directory
-COPY AI_Agent/ .
+COPY ./AI_Agent/ .
 
 # Expose port (Railway will set PORT env var)
 EXPOSE 8080
