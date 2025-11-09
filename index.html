@@ -121,7 +121,7 @@
             "@type": "ContactPoint",
             "telephone": "+1-817-465-9331",
             "contactType": "customer service",
-            "email": "brian@metroflexgym.com",
+            "email": "noel@metroflexevents.com",
             "availableLanguage": "English"
           },
           "sameAs": [
@@ -2711,7 +2711,11 @@
             <div class="contact-grid">
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
-                    <form class="contact-form" action="#" method="POST">
+                    <form class="contact-form" action="https://formspree.io/f/xnnqdlrg" method="POST">
+                        <input type="hidden" name="_to" value="noel@metroflexevents.com">
+                        <input type="hidden" name="_subject" value="New MetroFlex Events Contact Form Submission">
+                        <input type="hidden" name="_replyto" id="replyto-field">
+
                         <div class="form-group">
                             <label for="contact-name">Name</label>
                             <input type="text" id="contact-name" name="name" required placeholder="Your Name">
@@ -2719,7 +2723,7 @@
 
                         <div class="form-group">
                             <label for="contact-email">Email</label>
-                            <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+                            <input type="email" id="contact-email" name="email" required placeholder="your@email.com" onchange="document.getElementById('replyto-field').value = this.value;">
                         </div>
 
                         <div class="form-group">
@@ -2751,9 +2755,9 @@
                 <!-- Contact Info Sidebar -->
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>Brian Dobson</h3>
-                        <p>Event Director & Founder</p>
-                        <p><strong>Email:</strong> <a href="mailto:brian@metroflexgym.com">brian@metroflexgym.com</a></p>
+                        <h3>Noel Pena</h3>
+                        <p>Event Coordinator</p>
+                        <p><strong>Email:</strong> <a href="mailto:noel@metroflexevents.com">noel@metroflexevents.com</a></p>
                         <p><strong>Phone:</strong> <a href="tel:+18174659331">(817) 465-9331</a></p>
                     </div>
 
