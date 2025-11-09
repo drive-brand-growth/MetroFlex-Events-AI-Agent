@@ -1,8 +1,8 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "builder": "DOCKERFILE",
-    "dockerfilePath": "AI_Agent/Dockerfile"
+    "builder": "NIXPACKS",
+    "nixpacksConfigPath": "AI_Agent/nixpacks.toml"
   },
   "deploy": {
     "healthcheckPath": "/health",
