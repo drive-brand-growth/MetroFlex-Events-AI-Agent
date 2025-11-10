@@ -52,12 +52,16 @@ class MetroFlexAIAgent:
 
         # Index 2025 events
         for event_name, event_data in kb.get('2025_events', {}).items():
+            # Skip if event_data is not a dict
+            if not isinstance(event_data, dict):
+                continue
+
             text = f"{event_name}: {event_data.get('official_name', '')} {event_data.get('description', '')} Date: {event_data.get('date', '')} Venue: {event_data.get('venue', '')} {event_data.get('location', '')}"
             add_to_index(text, 'event', event_name)
 
             # CRITICAL: Index registration links separately for vendor/competitor queries
             registration = event_data.get('registration', {})
-            if registration:
+            if registration and isinstance(registration, dict):
                 reg_text = f"Registration for {event_name} {event_data.get('official_name', '')}: Competitor entry: {registration.get('competitor_entry', 'Not available')} | Vendor booth registration: {registration.get('vendor_registration', 'Not available')} | General admission: {registration.get('general_admission', 'Not available')}"
                 add_to_index(reg_text, 'registration', f"{event_name}_reg")
 
