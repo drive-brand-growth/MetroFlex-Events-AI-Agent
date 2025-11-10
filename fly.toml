@@ -1,0 +1,46 @@
+# Fly.io Configuration for MetroFlex AI Agent
+# World-class performance, edge computing, global distribution
+
+app = "metroflex-ai-agent"
+primary_region = "dfw"  # Dallas - closest to Arlington, TX
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "8080"
+  FLASK_ENV = "production"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false  # Keep running for best performance
+  auto_start_machines = true
+  min_machines_running = 1    # Always have 1 instance ready
+
+  # Health checks
+  [http_service.http_check]
+    interval = "30s"
+    grace_period = "10s"
+    method = "GET"
+    path = "/health"
+    protocol = "http"
+    timeout = "5s"
+    tls_skip_verify = false
+
+  # Concurrency settings for optimal performance
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200
+
+# VM resources - Optimized for AI agent
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 512  # Upgrade to 1024 if needed
+
+# Restart policy
+[restart]
+  policy = "on-failure"
+  max_retries = 10

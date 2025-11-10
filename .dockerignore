@@ -1,0 +1,52 @@
+# Don't include these in Docker image (reduces size, improves performance)
+
+# Git
+.git
+.gitignore
+
+# Documentation (not needed in production)
+*.md
+!AI_Agent/METROFLEX_EVENTS_KB_V2_RESEARCH_BASED.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Other deployment configs
+railway.json
+nixpacks.toml
+Procfile
+
+# HTML/Website files (not needed for AI agent)
+*.html
+METROFLEX_HOMEPAGE_COMPLETE.html
+components/
+
+# Keep only what we need
+!AI_Agent/app.py
+!AI_Agent/requirements.txt
+!AI_Agent/METROFLEX_EVENTS_KB_V2_RESEARCH_BASED.json
