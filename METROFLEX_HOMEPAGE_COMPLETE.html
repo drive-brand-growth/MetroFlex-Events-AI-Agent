@@ -1474,6 +1474,7 @@
 
             .hero-title {
                 font-size: 40px;
+                line-height: 1.1;
             }
 
             .hero-subtitle {
@@ -1482,6 +1483,7 @@
 
             .hero-description {
                 font-size: 15px;
+                line-height: 1.6;
             }
 
             .section-title {
@@ -1498,8 +1500,18 @@
             }
 
             .btn {
-                padding: 14px 28px;
-                font-size: 13px;
+                padding: 14px 24px;
+                font-size: 14px;
+                width: 100%;
+                max-width: 280px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .cta-group {
+                gap: 12px;
+                padding: 0 20px;
             }
 
             .nav-container {
@@ -1581,11 +1593,47 @@
             .cta-group {
                 flex-direction: column;
                 align-items: center;
+                gap: 16px;
+                width: 100%;
             }
 
             .btn {
                 width: 100%;
-                max-width: 100%;
+                max-width: 320px;
+                text-align: center;
+                display: block;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Extra Small Mobile Devices (iPhone SE, small Android phones) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 13px;
+                max-width: 260px;
+                min-height: 48px; /* Ensure touch-friendly size */
+            }
+
+            .cta-group {
+                gap: 10px;
+                padding: 0 15px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .event-card {
+                padding: 20px;
             }
         }
 
