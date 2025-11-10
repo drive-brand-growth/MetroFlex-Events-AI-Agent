@@ -1,6 +1,6 @@
 {
   "knowledge_base_version": "2.0 - Research-Based",
-  "last_updated": "2025-01-15",
+  "last_updated": "2025-01-10",
   "data_sources": [
     "metroflexevents.com",
     "branchwarrenclassic.com",
@@ -9,9 +9,9 @@
     "Facebook: @originalmetroflexgym",
     "Instagram: @originalmetroflexgym",
     "NPC News Online (npcnewsonline.com)",
-    "NPC USA Texas official sources"
+    "NPC USA Texas official sources",
+    "muscleware.com"
   ],
-
   "organization": {
     "name": "MetroFlex Events",
     "type": "NPC Competition Event Producer",
@@ -39,7 +39,6 @@
       }
     }
   },
-
   "metroflex_ronnie_coleman_story": {
     "year": 1990,
     "context": "3 years after MetroFlex Gym founding",
@@ -66,7 +65,6 @@
     "lasting_impact": "Ronnie Coleman still maintains connection to MetroFlex. The Ronnie Coleman Classic event honors this legendary partnership.",
     "free_lifetime_membership": "Coleman won Mr. Texas as agreed, earning free lifetime training at MetroFlex - a promise kept to this day"
   },
-
   "2025_events": {
     "raw_power_wild_game_feast": {
       "date": "2025-12-05",
@@ -88,7 +86,6 @@
       "status": "Next upcoming event",
       "expected_attendance": "100-300 participants and spectators"
     },
-
     "npc_better_bodies_mutant_classic": {
       "official_name": "NPC Better Bodies Mutant Classic",
       "date": "2025-04-05",
@@ -127,7 +124,6 @@
       "hotel_partner": "Holiday Inn Dallas",
       "status": "Open for registration"
     },
-
     "npc_ronnie_coleman_classic": {
       "official_name": "NPC Ronnie Coleman Classic",
       "date": "2025-05-17",
@@ -174,7 +170,6 @@
       },
       "status": "Open for registration"
     },
-
     "npc_branch_warren_classic": {
       "official_name": "NPC Branch Warren Classic",
       "date": "2025-06-21",
@@ -220,7 +215,6 @@
       "status": "Open for registration"
     }
   },
-
   "npc_organization_info": {
     "full_name": "National Physique Committee",
     "founded": 1982,
@@ -234,18 +228,39 @@
     "how_to_get_npc_card": "Available at npcnewsonline.com or purchase at event (higher fee at event)",
     "path_to_pro": "Win overall title at NPC National Championship to earn IFBB Pro Card"
   },
-
   "npc_divisions_detailed": {
     "mens_bodybuilding": {
       "description": "Classic bodybuilding focused on maximum muscle mass, symmetry, and conditioning",
       "weight_classes": [
-        {"class": "Bantamweight", "max_weight": "143.25 lbs", "unit": "lbs"},
-        {"class": "Lightweight", "weight_range": "over 143.25 up to & including 154.25 lbs"},
-        {"class": "Welterweight", "weight_range": "over 154.25 up to & including 165.25 lbs"},
-        {"class": "Middleweight", "weight_range": "over 165.25 up to & including 176.25 lbs"},
-        {"class": "Light-Heavyweight", "weight_range": "over 176.25 up to & including 198.25 lbs"},
-        {"class": "Heavyweight", "weight_range": "over 198.25 up to & including 225.25 lbs"},
-        {"class": "Super Heavyweight", "min_weight": "over 225.25 lbs"}
+        {
+          "class": "Bantamweight",
+          "max_weight": "143.25 lbs",
+          "unit": "lbs"
+        },
+        {
+          "class": "Lightweight",
+          "weight_range": "over 143.25 up to & including 154.25 lbs"
+        },
+        {
+          "class": "Welterweight",
+          "weight_range": "over 154.25 up to & including 165.25 lbs"
+        },
+        {
+          "class": "Middleweight",
+          "weight_range": "over 165.25 up to & including 176.25 lbs"
+        },
+        {
+          "class": "Light-Heavyweight",
+          "weight_range": "over 176.25 up to & including 198.25 lbs"
+        },
+        {
+          "class": "Heavyweight",
+          "weight_range": "over 198.25 up to & including 225.25 lbs"
+        },
+        {
+          "class": "Super Heavyweight",
+          "min_weight": "over 225.25 lbs"
+        }
       ],
       "judging_criteria": [
         "Muscularity (muscle mass and development)",
@@ -257,24 +272,65 @@
       "posing_requirements": "7 mandatory poses + optional individual posing routine",
       "suit_requirements": "Posing trunks (solid color, no logos, 50% glute coverage minimum)"
     },
-
     "classic_physique": {
       "description": "Golden Era aesthetic - V-taper, symmetry, balanced proportions. More size than Men's Physique but not extreme mass of Bodybuilding",
       "height_weight_classes": [
-        {"height": "Up to 5'4\"", "max_weight": "167 lbs"},
-        {"height": "Up to 5'5\"", "max_weight": "172 lbs"},
-        {"height": "Up to 5'6\"", "max_weight": "177 lbs"},
-        {"height": "Up to 5'7\"", "max_weight": "182 lbs"},
-        {"height": "Up to 5'8\"", "max_weight": "187 lbs"},
-        {"height": "Up to 5'9\"", "max_weight": "194 lbs"},
-        {"height": "Up to 5'10\" (5'10\" to 5'11\")", "max_weight": "202 lbs"},
-        {"height": "Up to 5'11\" (included in 5'10-5'11 class)", "max_weight": "202 lbs"},
-        {"height": "Up to 6'0\"", "max_weight": "217 lbs"},
-        {"height": "Up to 6'1\"", "max_weight": "224 lbs"},
-        {"height": "Up to 6'2\"", "max_weight": "232 lbs"},
-        {"height": "Up to 6'3\"", "max_weight": "239 lbs"},
-        {"height": "Up to 6'4\"", "max_weight": "246 lbs"},
-        {"height": "Up to 6'5\"", "max_weight": "253 lbs"}
+        {
+          "height": "Up to 5'4\"",
+          "max_weight": "167 lbs"
+        },
+        {
+          "height": "Up to 5'5\"",
+          "max_weight": "172 lbs"
+        },
+        {
+          "height": "Up to 5'6\"",
+          "max_weight": "177 lbs"
+        },
+        {
+          "height": "Up to 5'7\"",
+          "max_weight": "182 lbs"
+        },
+        {
+          "height": "Up to 5'8\"",
+          "max_weight": "187 lbs"
+        },
+        {
+          "height": "Up to 5'9\"",
+          "max_weight": "194 lbs"
+        },
+        {
+          "height": "Up to 5'10\" (5'10\" to 5'11\")",
+          "max_weight": "202 lbs"
+        },
+        {
+          "height": "Up to 5'11\" (included in 5'10-5'11 class)",
+          "max_weight": "202 lbs"
+        },
+        {
+          "height": "Up to 6'0\"",
+          "max_weight": "217 lbs"
+        },
+        {
+          "height": "Up to 6'1\"",
+          "max_weight": "224 lbs"
+        },
+        {
+          "height": "Up to 6'2\"",
+          "max_weight": "232 lbs"
+        },
+        {
+          "height": "Up to 6'3\"",
+          "max_weight": "239 lbs"
+        },
+        {
+          "height": "Up to 6'4\"",
+          "max_weight": "246 lbs"
+        },
+        {
+          "height": "Up to 6'5\"",
+          "max_weight": "253 lbs"
+        }
       ],
       "weight_limit_enforcement": "Competitors must not exceed maximum weight for their height. If over weight, must move to Bodybuilding or Men's Physique",
       "height_classes_note": "Four distinct height classes at competitions, though number may vary based on entries",
@@ -288,18 +344,41 @@
       "posing_requirements": "7 mandatory poses + 60-second posing routine with music",
       "suit_requirements": "Board shorts (mid-thigh length, above knee)"
     },
-
     "mens_physique": {
       "description": "Focus on marketability, conditioning, overall aesthetic. Board shorts, no mandatory poses, emphasis on V-taper and stage presence",
       "height_classes": [
-        {"class": "Class A", "height": "Up to & including 5'6\""},
-        {"class": "Class B", "height": "Over 5'6\" up to & including 5'7.5\""},
-        {"class": "Class C", "height": "Over 5'7.5\" up to & including 5'8.5\""},
-        {"class": "Class D", "height": "Over 5'8.5\" up to & including 5'9.5\""},
-        {"class": "Class E", "height": "Over 5'9.5\" up to & including 5'10.5\""},
-        {"class": "Class F", "height": "Over 5'10.5\" up to & including 5'11.5\""},
-        {"class": "Class G", "height": "Over 5'11.5\" up to & including 6'1\""},
-        {"class": "Class H", "height": "Over 6'1\""}
+        {
+          "class": "Class A",
+          "height": "Up to & including 5'6\""
+        },
+        {
+          "class": "Class B",
+          "height": "Over 5'6\" up to & including 5'7.5\""
+        },
+        {
+          "class": "Class C",
+          "height": "Over 5'7.5\" up to & including 5'8.5\""
+        },
+        {
+          "class": "Class D",
+          "height": "Over 5'8.5\" up to & including 5'9.5\""
+        },
+        {
+          "class": "Class E",
+          "height": "Over 5'9.5\" up to & including 5'10.5\""
+        },
+        {
+          "class": "Class F",
+          "height": "Over 5'10.5\" up to & including 5'11.5\""
+        },
+        {
+          "class": "Class G",
+          "height": "Over 5'11.5\" up to & including 6'1\""
+        },
+        {
+          "class": "Class H",
+          "height": "Over 6'1\""
+        }
       ],
       "height_classes_note": "Number of height classes subject to change and may be combined if low entries",
       "judging_criteria": [
@@ -312,12 +391,17 @@
       "posing_requirements": "No posing routine. Only comparisons and individual quarter turns",
       "suit_requirements": "Board shorts just above knee, solid color or simple patterns, no branding/logos"
     },
-
     "womens_bodybuilding": {
       "description": "Maximum muscle mass and development for women, similar judging to men's bodybuilding",
       "weight_classes": [
-        {"class": "Lightweight", "max_weight": "125 lbs"},
-        {"class": "Heavyweight", "min_weight": "Over 125 lbs"}
+        {
+          "class": "Lightweight",
+          "max_weight": "125 lbs"
+        },
+        {
+          "class": "Heavyweight",
+          "min_weight": "Over 125 lbs"
+        }
       ],
       "judging_criteria": [
         "Muscularity",
@@ -329,15 +413,29 @@
       "posing_requirements": "7 mandatory poses + individual posing routine with music",
       "suit_requirements": "Two-piece posing suit"
     },
-
     "figure": {
       "description": "Athletic, toned physique with muscle shape but softer than Women's Physique. Emphasis on femininity and proportion",
       "height_classes": [
-        {"class": "Class A", "height": "Up to & including 5'2\""},
-        {"class": "Class B", "height": "Over 5'2\" up to & including 5'4\""},
-        {"class": "Class C", "height": "Over 5'4\" up to & including 5'6\""},
-        {"class": "Class D", "height": "Over 5'6\" up to & including 5'8\""},
-        {"class": "Class E", "height": "Over 5'8\""}
+        {
+          "class": "Class A",
+          "height": "Up to & including 5'2\""
+        },
+        {
+          "class": "Class B",
+          "height": "Over 5'2\" up to & including 5'4\""
+        },
+        {
+          "class": "Class C",
+          "height": "Over 5'4\" up to & including 5'6\""
+        },
+        {
+          "class": "Class D",
+          "height": "Over 5'6\" up to & including 5'8\""
+        },
+        {
+          "class": "Class E",
+          "height": "Over 5'8\""
+        }
       ],
       "judging_criteria": [
         "Balance and shape",
@@ -349,15 +447,29 @@
       "posing_requirements": "Quarter turns only (no mandatory poses or routine)",
       "suit_requirements": "Two-piece suit, posing heels"
     },
-
     "bikini": {
       "description": "Focus on overall appearance, balance, shape, skin tone. Softest division with minimal muscle definition",
       "height_classes": [
-        {"class": "Class A", "height": "Up to & including 5'2\""},
-        {"class": "Class B", "height": "Over 5'2\" up to & including 5'4\""},
-        {"class": "Class C", "height": "Over 5'4\" up to & including 5'6\""},
-        {"class": "Class D", "height": "Over 5'6\" up to & including 5'8\""},
-        {"class": "Class E", "height": "Over 5'8\""}
+        {
+          "class": "Class A",
+          "height": "Up to & including 5'2\""
+        },
+        {
+          "class": "Class B",
+          "height": "Over 5'2\" up to & including 5'4\""
+        },
+        {
+          "class": "Class C",
+          "height": "Over 5'4\" up to & including 5'6\""
+        },
+        {
+          "class": "Class D",
+          "height": "Over 5'6\" up to & including 5'8\""
+        },
+        {
+          "class": "Class E",
+          "height": "Over 5'8\""
+        }
       ],
       "judging_criteria": [
         "Balance and shape",
@@ -369,15 +481,29 @@
       "posing_requirements": "Model walk and quarter turns (no mandatory poses)",
       "suit_requirements": "Two-piece bikini suit, posing heels"
     },
-
     "wellness": {
       "description": "Emphasis on lower body development (glutes and legs) with fit upper body. Athletic and balanced look",
       "height_classes": [
-        {"class": "Class A", "height": "Up to & including 5'2\""},
-        {"class": "Class B", "height": "Over 5'2\" up to & including 5'4\""},
-        {"class": "Class C", "height": "Over 5'4\" up to & including 5'6\""},
-        {"class": "Class D", "height": "Over 5'6\" up to & including 5'8\""},
-        {"class": "Class E", "height": "Over 5'8\""}
+        {
+          "class": "Class A",
+          "height": "Up to & including 5'2\""
+        },
+        {
+          "class": "Class B",
+          "height": "Over 5'2\" up to & including 5'4\""
+        },
+        {
+          "class": "Class C",
+          "height": "Over 5'4\" up to & including 5'6\""
+        },
+        {
+          "class": "Class D",
+          "height": "Over 5'6\" up to & including 5'8\""
+        },
+        {
+          "class": "Class E",
+          "height": "Over 5'8\""
+        }
       ],
       "judging_criteria": [
         "Balance and shape (emphasis on glutes and legs)",
@@ -389,14 +515,25 @@
       "posing_requirements": "Model walk and quarter turns",
       "suit_requirements": "Two-piece suit, posing heels"
     },
-
     "womens_physique": {
       "description": "More muscle mass than Figure, less than Women's Bodybuilding. V-taper and athletic development",
       "height_classes": [
-        {"class": "Class A", "height": "Up to & including 5'3\""},
-        {"class": "Class B", "height": "Over 5'3\" up to & including 5'5\""},
-        {"class": "Class C", "height": "Over 5'5\" up to & including 5'7\""},
-        {"class": "Class D", "height": "Over 5'7\""}
+        {
+          "class": "Class A",
+          "height": "Up to & including 5'3\""
+        },
+        {
+          "class": "Class B",
+          "height": "Over 5'3\" up to & including 5'5\""
+        },
+        {
+          "class": "Class C",
+          "height": "Over 5'5\" up to & including 5'7\""
+        },
+        {
+          "class": "Class D",
+          "height": "Over 5'7\""
+        }
       ],
       "judging_criteria": [
         "Muscularity and muscle shape",
@@ -408,7 +545,6 @@
       "posing_requirements": "Mandatory poses + individual posing routine with music",
       "suit_requirements": "Two-piece posing suit, posing heels"
     },
-
     "wheelchair": {
       "description": "Open to competitors who use wheelchairs. Judged on upper body development",
       "classes": "Determined by event",
@@ -422,7 +558,6 @@
       "suit_requirements": "Standard posing attire for chosen division"
     }
   },
-
   "competition_procedures": {
     "npc_card_requirement": {
       "required": true,
@@ -431,14 +566,26 @@
       "cost_difference": "Higher fee if purchased at event vs online in advance",
       "recommendation": "Purchase online before event to save money"
     },
-
     "registration_process": {
-      "methods": ["Online via MuscleWare", "Event website registration portals", "Day-of registration (higher fees)"],
-      "required_information": ["Full name", "Division and class", "Contact information", "Emergency contact", "NPC card number"],
-      "early_registration_benefits": ["Lower fees", "Guaranteed entry", "Better scheduling"],
+      "methods": [
+        "Online via MuscleWare",
+        "Event website registration portals",
+        "Day-of registration (higher fees)"
+      ],
+      "required_information": [
+        "Full name",
+        "Division and class",
+        "Contact information",
+        "Emergency contact",
+        "NPC card number"
+      ],
+      "early_registration_benefits": [
+        "Lower fees",
+        "Guaranteed entry",
+        "Better scheduling"
+      ],
       "late_fees": "Apply for registrations close to event date"
     },
-
     "competition_day_schedule": {
       "typical_timeline": {
         "check_in": "7:00 AM",
@@ -451,17 +598,28 @@
       "weigh_in_rules": "Must make weight within 30-minute window. If over, may need to move divisions",
       "prejudging_vs_finals": "Prejudging determines placings through comparisons. Finals feature individual routines and awards presentations"
     },
-
     "posing_music": {
-      "required_for": ["Classic Physique", "Women's Bodybuilding", "Figure (some shows)", "Women's Physique"],
-      "not_required_for": ["Men's Physique", "Bikini", "Wellness", "Men's Bodybuilding (optional)"],
+      "required_for": [
+        "Classic Physique",
+        "Women's Bodybuilding",
+        "Figure (some shows)",
+        "Women's Physique"
+      ],
+      "not_required_for": [
+        "Men's Physique",
+        "Bikini",
+        "Wellness",
+        "Men's Bodybuilding (optional)"
+      ],
       "max_length": "60 seconds",
-      "format": ["MP3", "WAV"],
+      "format": [
+        "MP3",
+        "WAV"
+      ],
       "submission_deadline": "Typically 1 week before event (check specific event)",
       "submission_method": "Upload via event website or email to event coordinator",
       "backup_recommendation": "Bring USB drive with music to event as backup"
     },
-
     "what_to_bring": {
       "required": [
         "NPC card",
@@ -488,7 +646,6 @@
         "Outside food in certain backstage areas (varies by venue)"
       ]
     },
-
     "tanning_rules": {
       "requirement": "All competitors must have competition tan (mandatory)",
       "options": [
@@ -500,7 +657,6 @@
       "application_timing": "Night before or morning of show (allow dry time)",
       "onsite_service": "ProTan USA available at all MetroFlex Events"
     },
-
     "pro_card_qualification": {
       "requirement": "Win overall title at NPC National Championship",
       "national_qualifiers": [
@@ -512,13 +668,12 @@
         "Masters Nationals",
         "Wheelchair Nationals"
       ],
-      "qualification_path": "Place well at regional/state shows (like MetroFlex Events) → Earn qualification to compete at nationals → Win overall at nationals → Earn IFBB Pro Card",
+      "qualification_path": "Place well at regional/state shows (like MetroFlex Events) \u2192 Earn qualification to compete at nationals \u2192 Win overall at nationals \u2192 Earn IFBB Pro Card",
       "metroflex_events_role": "All three major MetroFlex Events (Better Bodies, Ronnie Coleman, Branch Warren) are National Qualifiers",
       "pro_cards_awarded_through_metroflex": "25+ athletes trained at MetroFlex Gym have earned IFBB Pro Cards",
       "post_pro_card": "Eligible to compete in IFBB Pro League shows (Olympia qualifiers, Arnold Classic, etc.)"
     }
   },
-
   "sponsor_information": {
     "audience_demographics": {
       "annual_reach": "5,000+ attendees across all events",
@@ -539,7 +694,6 @@
       "geographic_reach": "Texas statewide + Oklahoma, Louisiana, Arkansas, New Mexico competitors",
       "competitor_spending_power": "Average competitor spends $500-1,500 per competition (entry, travel, services)"
     },
-
     "sponsorship_packages_better_bodies": {
       "title_sponsor": {
         "price": "$25,000",
@@ -602,7 +756,6 @@
         ]
       }
     },
-
     "roi_expectations": {
       "brand_awareness_increase": "30-45% among fitness enthusiast demographic",
       "leads_per_event": "150-300 qualified leads (vendor booth interactions)",
@@ -611,7 +764,6 @@
       "repeat_sponsorship_rate": "75%+ of sponsors return year-over-year",
       "audience_quality": "High-intent buyers actively investing in fitness lifestyle"
     },
-
     "activation_opportunities": {
       "vendor_booth": "Set up booth in expo area, interact directly with competitors and spectators",
       "product_sampling": "Distribute samples, demo products, offer event-exclusive discounts",
@@ -620,7 +772,6 @@
       "speaking_opportunities": "Higher tiers can present seminars or speak at event",
       "awards_presentation": "Present awards in your sponsored division for photo opportunities"
     },
-
     "past_sponsors": {
       "major_brands": [
         "Pro Tan USA (tanning products)",
@@ -632,7 +783,6 @@
       ]
     }
   },
-
   "first_time_competitor_guide": {
     "10_steps_to_success": [
       {
@@ -711,7 +861,6 @@
         "checklist": "Confirm tanning appointment, pack posing suits, prepare music backup, book hotel, plan meals"
       }
     ],
-
     "common_mistakes": [
       "Starting prep too late (need 12-16 weeks minimum for first show)",
       "Not practicing posing enough (should be daily habit)",
@@ -724,7 +873,6 @@
       "Skipping the NPC card (can't compete without it)",
       "Not having backup plans (extra suit, music on USB, etc.)"
     ],
-
     "expected_costs": {
       "npc_card": "$100-150",
       "registration": "$75-200",
@@ -736,7 +884,6 @@
       "photos": "$50-200 (optional)",
       "total_estimate": "$500-1,500 for first show"
     },
-
     "mental_preparation": {
       "expectations": "Understand this is a learning experience. Few people win their first show. Focus on execution.",
       "nerves": "Nervousness is normal. Use it as energy. Practice visualization and deep breathing.",
@@ -745,7 +892,6 @@
       "perspective": "Win or lose, you've achieved something 99% of people never attempt. Be proud."
     }
   },
-
   "faq_quick_reference": {
     "do_i_need_npc_card": "Yes, NPC card is mandatory to compete. Purchase at npcnewsonline.com before event for lower cost.",
     "can_i_compete_in_multiple_divisions": "Yes, you can enter multiple divisions. Each division requires separate registration and fee.",
@@ -757,7 +903,6 @@
     "is_there_prize_money": "Typically no cash prizes at regional shows. Winners receive trophies. National shows may have prize money.",
     "how_do_i_qualify_for_nationals": "Place well at regional qualifier shows (like MetroFlex Events). Check specific national show qualification criteria."
   },
-
   "social_media": {
     "facebook": {
       "handle": "@originalmetroflexgym",
@@ -769,14 +914,19 @@
       "handle": "@originalmetroflexgym",
       "followers": "120K+",
       "content_type": "Competition highlights, athlete features, throwback Ronnie Coleman content, event promotions",
-      "hashtags": ["#metroflexgym", "#metroflexevents", "#npcbodybuilding", "#ronniecoleman", "#branchwarren"]
+      "hashtags": [
+        "#metroflexgym",
+        "#metroflexevents",
+        "#npcbodybuilding",
+        "#ronniecoleman",
+        "#branchwarren"
+      ]
     },
     "youtube": {
       "content": "Past competition coverage, athlete interviews, training videos from MetroFlex Gym",
       "note": "Search 'MetroFlex Events' or specific competition names for videos"
     }
   },
-
   "venue_information": {
     "dallas_market_hall": {
       "location": "Dallas, Texas",
@@ -809,7 +959,6 @@
       "capacity": "Smaller, intimate venue for powerlifting and wild game feast"
     }
   },
-
   "hotel_recommendations": {
     "better_bodies_classic": {
       "partner": "Holiday Inn Dallas",
@@ -830,7 +979,6 @@
       "recommendation": "Search Arlington hotels near 2921 South Cooper Street"
     }
   },
-
   "brand_voice_guidelines": {
     "tone": "Confident, authoritative, no-nonsense, legacy-focused",
     "personality_traits": [
@@ -864,5 +1012,47 @@
       "Keep responses 2-4 paragraphs unless detailed explanation needed"
     ],
     "when_you_dont_know": "If information not in knowledge base, admit it honestly and provide contact info (brian@metroflexgym.com / 817-465-9331)"
+  },
+  "registration_platform": {
+    "platform_name": "MuscleWare",
+    "platform_url": "https://www.muscleware.com",
+    "description": "Official contest software for NPC and CPA sanctioned competitions",
+    "official_status": "Created and developed in direct consultation with NPC executives",
+    "key_features": {
+      "online_registration": "Streamlined athlete enrollment with automated confirmation emails",
+      "payment_processing": "Secure online payments with immediate fund transfers to promoters",
+      "competitor_entry": "Pre-numbered competitor assignments and automated check-in paperwork",
+      "music_upload": "Posing routine music uploading functionality",
+      "documentation": "Official height/weight confirmation and athlete waiver generation",
+      "offline_capability": "Offline statistician software for event venues (no internet required)",
+      "scoring_system": "Scorecard generation, crossover reporting, and results tracking"
+    },
+    "competitor_benefits": [
+      "Professional confirmation emails",
+      "Modern streamlined registration experience",
+      "Pre-numbered competitor assignments",
+      "Secure online payment processing",
+      "Posing music upload before event day"
+    ],
+    "promoter_benefits": [
+      "24/7 promoter portal access",
+      "Immediate fund transfers",
+      "Automated check-in paperwork",
+      "Category tracking and management",
+      "Standardized procedures across multiple events"
+    ],
+    "global_reach": {
+      "languages_supported": 20,
+      "countries_supported": 89,
+      "total_promoters": "394+",
+      "total_events_managed": "4,297+"
+    },
+    "metroflex_integration": "MetroFlex Events uses MuscleWare for all NPC competition registrations and event management",
+    "note_for_competitors": "When registration opens for MetroFlex Events, you will register through the MuscleWare platform",
+    "support": {
+      "learning_resources": "https://www.muscleware.com/learn",
+      "live_support": "https://www.muscleware.com/livesupport",
+      "social_media": "@muscleware.inc (Instagram)"
+    }
   }
 }
