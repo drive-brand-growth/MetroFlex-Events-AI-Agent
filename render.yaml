@@ -1,0 +1,34 @@
+# Render.com Configuration for MetroFlex AI Agent
+# Easy deployment with auto-deploy from GitHub
+
+services:
+  # Main AI Agent Service
+  - type: web
+    name: metroflex-ai-agent
+    env: python
+    region: oregon  # Change to 'ohio' if closer to Texas users
+    plan: starter  # Free tier available, or 'starter' for $7/mo
+    branch: main  # Auto-deploy from main branch
+    buildCommand: "pip install -r AI_Agent/requirements.txt"
+    startCommand: "cd AI_Agent && gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 --worker-class gthread --access-logfile - --error-logfile - --log-level info"
+
+    # Health check
+    healthCheckPath: /health
+
+    # Environment variables
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: FLASK_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false  # Set this manually in Render dashboard (secure)
+
+    # Auto-scaling (for paid plans)
+    autoDeploy: true
+
+    # Disk for persistence (optional)
+    # disk:
+    #   name: data
+    #   mountPath: /data
+    #   sizeGB: 1
