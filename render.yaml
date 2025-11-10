@@ -1,34 +1,38 @@
-# Render.com Configuration for MetroFlex AI Agent
-# Easy deployment with auto-deploy from GitHub
+# Render.com Blueprint - MetroFlex AI Agent
+# Infrastructure as Code deployment configuration
 
 services:
-  # Main AI Agent Service
+  # MetroFlex AI Agent - Flask/OpenAI chatbot
   - type: web
     name: metroflex-ai-agent
-    env: python
-    region: oregon  # Change to 'ohio' if closer to Texas users
-    plan: starter  # Free tier available, or 'starter' for $7/mo
-    branch: main  # Auto-deploy from main branch
-    buildCommand: "pip install -r AI_Agent/requirements.txt"
-    startCommand: "cd AI_Agent && gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 --worker-class gthread --access-logfile - --error-logfile - --log-level info"
+    runtime: python
+    region: oregon
+    plan: free  # Change to 'starter' for $7/mo always-on
+    branch: main  # Deploy from main branch (or your feature branch)
 
-    # Health check
+    # Build configuration
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+
+    # Start configuration
+    startCommand: cd AI_Agent && gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120 --worker-class gthread --log-level info
+
+    # Health monitoring
     healthCheckPath: /health
 
-    # Environment variables
-    envVars:
-      - key: PORT
-        value: 10000
-      - key: FLASK_ENV
-        value: production
-      - key: OPENAI_API_KEY
-        sync: false  # Set this manually in Render dashboard (secure)
-
-    # Auto-scaling (for paid plans)
+    # Auto-deploy on git push
     autoDeploy: true
 
-    # Disk for persistence (optional)
-    # disk:
-    #   name: data
-    #   mountPath: /data
-    #   sizeGB: 1
+    # Environment variables (REQUIRED)
+    envVars:
+      - key: FLASK_ENV
+        value: production
+
+      - key: PORT
+        value: 10000
+
+      # IMPORTANT: Set this in Render Dashboard (not here for security)
+      - key: OPENAI_API_KEY
+        sync: false  # This must be set manually in Render Dashboard
+
+      - key: PYTHON_VERSION
+        value: 3.11.0
