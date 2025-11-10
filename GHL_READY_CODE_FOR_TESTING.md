@@ -425,7 +425,7 @@ To make it fully functional:
 (function() {
     // Configuration
     const CONFIG = {
-        WEBHOOK_URL: 'DEPLOY_BACKEND_FIRST',  // ⚠️ UPDATE THIS with your deployed webhook URL
+        WEBHOOK_URL: 'https://metroflex-events-ai.fly.dev/webhook/chat',  // ✅ Updated with Fly.io deployment URL
         USER_ID: generateUserId(),
         CONVERSATION_ID: generateConversationId()
     };
