@@ -37,27 +37,60 @@ class MetroFlexAIAgent:
         self.conversation_history = {}
 
     def _build_keyword_index(self) -> Dict[str, List[str]]:
-        """Build simple keyword index for retrieval"""
+        """Build comprehensive keyword index for retrieval"""
         index = {}
         kb = self.knowledge_base
 
-        # Index events
-        for event_name, event_data in kb.get('events', {}).items():
-            text = f"{event_name}: {event_data.get('description', '')} {event_data.get('date', '')} {event_data.get('location', '')}"
-            for word in text.lower().split():
-                if len(word) > 3:  # Skip short words
-                    if word not in index:
-                        index[word] = []
-                    index[word].append(('event', event_name, text))
-
-        # Index divisions
-        for division, rules in kb.get('npc_division_rules', {}).items():
-            text = f"{division}: {rules.get('description', '')}"
-            for word in text.lower().split():
+        # Helper function to add to index
+        def add_to_index(text, doc_type, doc_id):
+            for word in str(text).lower().split():
+                word = word.strip('.,!?:;"\'()[]{}')
                 if len(word) > 3:
                     if word not in index:
                         index[word] = []
-                    index[word].append(('division', division, text))
+                    index[word].append((doc_type, doc_id, text[:500]))
+
+        # Index 2025 events
+        for event_name, event_data in kb.get('2025_events', {}).items():
+            text = f"{event_name}: {event_data.get('official_name', '')} {event_data.get('description', '')} Date: {event_data.get('date', '')} Venue: {event_data.get('venue', '')} {event_data.get('location', '')}"
+            add_to_index(text, 'event', event_name)
+
+        # Index divisions
+        for division, rules in kb.get('npc_divisions_detailed', {}).items():
+            text = f"{division}: {rules.get('description', '')} Judging: {' '.join(rules.get('judging_criteria', []))} Posing: {rules.get('posing_requirements', '')}"
+            add_to_index(text, 'division', division)
+
+        # Index sponsor information
+        sponsor_info = kb.get('sponsor_information', {})
+        for section, data in sponsor_info.items():
+            text = f"Sponsorship {section}: {str(data)}"
+            add_to_index(text, 'sponsor', section)
+
+        # Index venue information
+        for venue_name, venue_data in kb.get('venue_information', {}).items():
+            text = f"Venue {venue_name}: {str(venue_data)}"
+            add_to_index(text, 'venue', venue_name)
+
+        # Index competition procedures
+        for proc_name, proc_data in kb.get('competition_procedures', {}).items():
+            text = f"{proc_name}: {str(proc_data)}"
+            add_to_index(text, 'procedure', proc_name)
+
+        # Index first-time competitor guide
+        comp_guide = kb.get('first_time_competitor_guide', {})
+        text = f"First-time competitor guide: {str(comp_guide.get('10_steps_to_success', ''))} Common mistakes: {str(comp_guide.get('common_mistakes', ''))}"
+        add_to_index(text, 'guide', 'first_time_competitor')
+
+        # Index FAQ
+        for q, a in kb.get('faq_quick_reference', {}).items():
+            text = f"FAQ {q}: {a}"
+            add_to_index(text, 'faq', q)
+
+        # Index registration platform (MuscleWare)
+        reg_platform = kb.get('registration_platform', {})
+        if reg_platform:
+            text = f"Registration platform {reg_platform.get('platform_name', '')}: {str(reg_platform)}"
+            add_to_index(text, 'registration', 'platform')
 
         return index
 
