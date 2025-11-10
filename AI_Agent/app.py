@@ -55,6 +55,12 @@ class MetroFlexAIAgent:
             text = f"{event_name}: {event_data.get('official_name', '')} {event_data.get('description', '')} Date: {event_data.get('date', '')} Venue: {event_data.get('venue', '')} {event_data.get('location', '')}"
             add_to_index(text, 'event', event_name)
 
+            # CRITICAL: Index registration links separately for vendor/competitor queries
+            registration = event_data.get('registration', {})
+            if registration:
+                reg_text = f"Registration for {event_name} {event_data.get('official_name', '')}: Competitor entry: {registration.get('competitor_entry', 'Not available')} | Vendor booth registration: {registration.get('vendor_registration', 'Not available')} | General admission: {registration.get('general_admission', 'Not available')}"
+                add_to_index(reg_text, 'registration', f"{event_name}_reg")
+
         # Index divisions
         for division, rules in kb.get('npc_divisions_detailed', {}).items():
             text = f"{division}: {rules.get('description', '')} Judging: {' '.join(rules.get('judging_criteria', []))} Posing: {rules.get('posing_requirements', '')}"
